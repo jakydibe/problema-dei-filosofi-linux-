@@ -75,7 +75,6 @@ void* close_process(void * vargp){
     while(1){
         if (*terminate_philosophers == 1){  //utilizzo la variabile condivisa tra processi
             int i = *(int *)vargp;
-            pthread_join(terminator[i],NULL); //aspetto che il processo  termini
             printf("processo filosofo[%d] chiuso [+]\n",i);
             exit(1);            //chiudo il processo che ha chiamato il thread di questa funzione
         }
